@@ -370,7 +370,7 @@ function authorsHtml(list){
 function linksHtml(p){
   var out=[];
   if(p.page) out.push(['project page',p.page]);
-  if(p.arxiv){ out.push(['arXiv','https://arxiv.org/abs/'+p.arxiv]); out.push(['pdf','https://arxiv.org/pdf/'+p.arxiv]); }
+  if(p.arxiv) out.push(['arXiv','https://arxiv.org/abs/'+p.arxiv]);
   if(p.paper) out.push(['paper',p.paper]);
   if(p.github) out.push(['code','https://github.com/'+p.github]);
   return out.map(function(l){return '<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
