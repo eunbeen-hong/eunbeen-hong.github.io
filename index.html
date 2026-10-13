@@ -131,6 +131,9 @@ h2::after{content:"";flex:1;height:1px;background:var(--rule)}
 .tag{display:inline-flex;align-items:center;height:24px;font-size:13px;font-weight:500;padding:0 10px;border-radius:999px;background:var(--tint);color:var(--tint-ink)}
 .tag.award{background:var(--award);color:#fff;font-weight:600;letter-spacing:.02em}
 .tag.soft{background:var(--bg-2);color:var(--muted)}
+.tag.lnk{background:none;border:1px solid var(--border);color:var(--muted);height:22px;font-size:12.5px}
+.tag.lnk:hover{border-color:var(--tint-ink);color:var(--tint-ink);background:var(--tint-2);text-decoration:none}
+.tag.lnk::before{content:"→";margin-right:5px;color:var(--faint)}
 .pub h3{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.3;margin:0 0 5px;letter-spacing:-.005em}
 .pub h3 a{color:var(--ink)}
 .pub .authors{font-size:15px;color:var(--muted);line-height:1.55;margin:0 0 4px}
@@ -197,10 +200,9 @@ footer a{color:var(--muted)}
     <div class="intro-text">
       <h1>Eunbeen Hong</h1>
       <p class="sub">M.S./Ph.D. student · <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a> · Seoul, Korea</p>
-      <p class="thesis">Understanding and generating dynamic 3D worlds from video: feed-forward 4D novel view synthesis, video diffusion, and what large vision models already know about scenes.</p>
-      <p class="bio">I am an M.S./Ph.D. integrated student at <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a>, advised by <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Prof. Seungryong Kim</a>. I received my B.E. from <a href="https://www.korea.edu/" target="_blank" rel="noopener">Korea University</a>. My recent work builds feed-forward latent models for 4D novel view synthesis and probes the structure hidden inside diffusion transformers and foundation models for segmentation.</p>
+      <p class="bio">I am an M.S./Ph.D. integrated student at <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a>, advised by <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Prof. Seungryong Kim</a>. My recent work builds feed-forward latent models for 4D novel view synthesis and probes the structure hidden inside diffusion transformers.</p>
       <div class="cta">
-        <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 14.3L5 13.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5l-7 3.8z"/></svg>Google Scholar</a>
+        <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 14.3L5 13.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5l-7 3.8z"/></svg>Scholar</a>
         <a href="https://github.com/eunbeen-hong" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a>
         <a href="https://www.linkedin.com/in/eunbeen-hong/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>LinkedIn</a>
         <a class="ghost" href="mailto:eunbeen.hong@kaist.ac.kr" id="emailLink">eunbeen.hong@kaist.ac.kr</a>
@@ -228,8 +230,8 @@ footer a{color:var(--muted)}
     <ul class="list">
       <li><span class="y">2024</span><span class="t">1st Place, Justice Hacks, CruzHacks 2024<small><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">TuitionShock.us</a> · 700+ students from 25 universities · UC Santa Cruz</small></span></li>
       <li><span class="y">2023</span><span class="t">Outstanding Project, Top 10 of 50 teams, Natural Language Processing<small>LyriKOR, Korea University</small></span></li>
+      <li><span class="y">2022</span><span class="t">Best Tutor Award<small>Peer Tutoring Program, Korea University</small></span></li>
       <li><span class="y">2021</span><span class="t">Academic Excellence Scholarship<small>Full-ride scholarship covering tuition and fees for all four years, Korea University</small></span></li>
-      <li><span class="y"></span><span class="t">Best Tutor Award<small>Peer Tutoring Program, Korea University</small></span></li>
     </ul>
   </section>
 
@@ -266,7 +268,6 @@ footer a{color:var(--muted)}
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="sk"><span class="l">PROGRAMMING</span><span class="v">Python, PyTorch, C/C++, JavaScript (advanced) · C# (intermediate) · Verilog, OCaml, Q# (elementary)</span></div>
       <div class="sk"><span class="l">LANGUAGES</span><span class="v">Korean (native), English (fluent, TOEIC 985 / 990)</span></div>
     </div>
   </section>
@@ -283,7 +284,7 @@ footer a{color:var(--muted)}
         </div>
       </div>
       <div class="row">
-        <div class="logo"><span>UCSC</span></div>
+        <div class="logo"><img src="assets/logos/ucsc.svg" alt=""></div>
         <div class="row-body">
           <div class="row-head"><div><span class="org">University of California, Santa Cruz</span><span class="loc">Santa Cruz, CA</span></div><span class="when">Sep 2023 – Jun 2024</span></div>
           <div class="role">Exchange Student, Department of Computer Science</div>
@@ -338,7 +339,7 @@ footer a{color:var(--muted)}
 /* Add a paper: append an object to PUBS. Links: page, arxiv (id only), paper (non-arXiv URL), github (owner/repo). */
 var ME='Eunbeen Hong';
 var PUBS=[
-  { year:2026, venue:'Under review', venueFull:'Preprint, under review', thumb:'assets/pubs/fl4n_arch.webp',
+  { year:2026, venue:'Preprint', venueFull:'Preprint', thumb:'assets/pubs/fl4n_arch.webp',
     title:'FL4N: Feed-forward Latent Model for 4D Novel View Synthesis',
     authors:['Eunbeen Hong','Hyeonseo Yu','Honggyu An','Jooho Son','Hyunah Ko','Soowon Son','Chaehyun Kim','Jahyeok Koo','Jisoo Kim','Junhwa Hur†','Seungryong Kim†'],
     tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, deformation fields, or geometry supervision.' },
@@ -373,7 +374,7 @@ function linksHtml(p){
   if(p.arxiv) out.push(['arXiv','https://arxiv.org/abs/'+p.arxiv]);
   if(p.paper) out.push(['paper',p.paper]);
   if(p.github) out.push(['code','https://github.com/'+p.github]);
-  return out.map(function(l){return '<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
+  return out.map(function(l){return '<a class="tag lnk" href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
 }
 function render(){
   var years=[]; PUBS.forEach(function(p){ if(years.indexOf(p.year)<0) years.push(p.year); });
@@ -384,9 +385,10 @@ function render(){
         var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:''));
         var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
         var tagCls=/review|preprint|arxiv/i.test(p.venue)?'tag soft':'tag';
-        var venue=/\d{4}/.test(p.venue)||/review/i.test(p.venue)?p.venue:p.venue+' '+p.year;
+        var venue=/\d{4}/.test(p.venue)?p.venue:p.venue+' '+p.year;
         var tags='<span class="'+tagCls+'">'+esc(venue)+'</span>';
         (p.awards||[]).forEach(function(a){ tags+='<span class="tag award">'+esc(a)+'</span>'; });
+        tags+=linksHtml(p);
         return '<article class="pub">'+
           (primary?'<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>':'<div class="teaser">'+teaser+'</div>')+
           '<div class="pub-body">'+
@@ -395,7 +397,6 @@ function render(){
             '<p class="authors">'+authorsHtml(p.authors)+'</p>'+
             '<p class="venue">'+esc(p.venueFull)+(/\d{4}/.test(p.venueFull)?'':', '+p.year)+'</p>'+
             (p.tldr?'<p class="tldr"><b>TL;DR</b> '+esc(p.tldr)+'</p>':'')+
-            (linksHtml(p)?'<div class="links">'+linksHtml(p)+'</div>':'')+
           '</div></article>';
       }).join('')+'</div></div>';
   }).join('');
