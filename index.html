@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eunbeen Hong</title>
+<meta name="description" content="Eunbeen Hong — M.S./Ph.D. student at CVLAB, KAIST AI. 4D scene understanding and generation, feed-forward novel view synthesis, diffusion models.">
+<meta name="theme-color" content="#FBFAF7">
+<meta property="og:title" content="Eunbeen Hong">
+<meta property="og:description" content="M.S./Ph.D. student at CVLAB, KAIST AI. 4D scene understanding and generation, feed-forward novel view synthesis, diffusion models.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23E3F1EC'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='19' font-weight='600' fill='%230F6E56'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FBFAF7;
+  --bg-2:#F3F1EB;
+  --ink:#1C1B18;
+  --ink-2:#36342F;
+  --muted:#625F57;
+  --muted-2:#8C887E;
+  --faint:#B8B3A7;
+  --rule:#E7E3DA;
+  --border:#D9D4C8;
+  --tint:#E3F1EC;
+  --tint-2:#EEF6F3;
+  --tint-3:#CFE6DC;
+  --tint-ink:#0F6E56;
+  --link:#0F6E56;
+  --link-2:#0A5240;
+  --award:#B8441F;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#151513;--bg-2:#1E1E1B;--ink:#ECE9E1;--ink-2:#D6D2C8;--muted:#A6A298;--muted-2:#7E7A70;--faint:#5A574F;
+    --rule:#2A2A26;--border:#38372F;--tint:#163B31;--tint-2:#1A2B26;--tint-3:#1F4D3F;--tint-ink:#8FD4BA;--link:#8FD4BA;--link-2:#B6E6D3;--award:#E8865F;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+::selection{background:var(--tint-3)}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible{outline:2.5px solid var(--tint-ink);outline-offset:3px;border-radius:3px}
+img{display:block;max-width:100%}
+[id]{scroll-margin-top:72px}
+sup{font-size:.7em;line-height:0;vertical-align:.4em}
+
+.page{max-width:980px;margin:0 auto;padding:0 clamp(16px,4vw,36px) 64px}
+
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.bar .in{max-width:980px;margin:0 auto;padding:0 clamp(16px,4vw,36px);height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.brand:hover{text-decoration:none;color:var(--ink)}
+.bar nav{display:flex;gap:2px}
+.bar nav a{font-size:15px;font-weight:500;color:var(--muted);padding:6px 11px;border-radius:7px}
+.bar nav a:hover{background:var(--tint-2);color:var(--tint-ink);text-decoration:none}
+@media (max-width:600px){.bar nav a{padding:6px 8px;font-size:14.5px}.bar nav a.hide-sm{display:none}}
+
+.intro{display:flex;gap:36px;align-items:flex-start;padding:52px 0 40px}
+.portrait{flex:0 0 150px}
+.portrait img,.portrait .ph{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+.portrait .ph{display:grid;place-items:center;background:var(--bg-2);border:1px dashed var(--border);font-size:12.5px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+.portrait img[hidden],.portrait .ph[hidden]{display:none}
+.intro-text{flex:1 1 360px;min-width:0}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5.4vw,48px);line-height:1.05;letter-spacing:-.02em;margin:0 0 8px}
+.sub{font-size:16px;color:var(--muted);margin:0 0 20px}
+.sub a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}
+.sub a:hover{color:var(--tint-ink);text-decoration-color:currentColor}
+.thesis{font-family:var(--serif);font-size:clamp(20px,2.7vw,23px);line-height:1.45;color:var(--ink-2);margin:0 0 14px;max-width:38em}
+.bio{font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 10px;max-width:46em}
+.cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cta a{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--tint);color:var(--tint-ink)}
+.cta a svg{width:15px;height:15px;fill:currentColor}
+.cta a:hover{background:var(--tint-3);text-decoration:none}
+.cta a.ghost{background:none;border:1px solid var(--border);color:var(--muted)}
+.cta a.ghost:hover{border-color:var(--tint-ink);color:var(--tint-ink);background:var(--tint-2)}
+@media (max-width:700px){
+  .intro{gap:22px;padding-top:34px;flex-wrap:wrap}
+  .portrait{flex:0 0 110px}
+  .portrait img,.portrait .ph{width:110px}
+}
+
+section{padding:34px 0 8px;border-top:1px solid var(--rule)}
+h2{font-family:var(--sans);font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;margin:0 0 20px;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+.note{font-size:15px;color:var(--muted-2);margin:-8px 0 18px}
+
+.news{list-style:none;margin:0;padding:0 0 22px;display:flex;flex-direction:column;gap:9px}
+.news li{display:flex;gap:18px;align-items:baseline;font-size:16px}
+.news .d{flex:0 0 82px;font-size:14px;color:var(--muted-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.news .t{color:var(--ink-2)}
+.news .t b{font-weight:600;color:var(--ink)}
+
+.rows{display:flex;flex-direction:column;padding-bottom:24px}
+.row{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--rule)}
+.row:first-child{border-top:0;padding-top:0}
+.logo{flex:0 0 44px;width:44px;height:44px;border-radius:9px;background:#fff;border:1px solid var(--rule);display:grid;place-items:center;overflow:hidden;margin-top:2px}
+.logo img{width:76%;height:76%;object-fit:contain}
+.logo span{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--muted)}
+.row-body{flex:1 1 auto;min-width:0}
+.row-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px}
+.org{font-size:17px;font-weight:600;color:var(--ink)}
+.org a{color:inherit}
+.loc{font-size:14.5px;color:var(--muted-2);margin-left:8px;font-weight:400}
+.when{font-size:14px;color:var(--muted-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.role{font-size:16px;color:var(--ink-2);margin-top:2px}
+.detail{font-size:15px;color:var(--muted);margin-top:3px;line-height:1.55}
+.detail a{color:var(--muted);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px}
+.detail a:hover{color:var(--tint-ink);text-decoration-color:currentColor}
+
+.year-group{padding:4px 0 10px}
+.year{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);line-height:1.4;margin:0 0 6px}
+.year-group+.year-group{padding-top:18px}
+.pubs{display:flex;flex-direction:column}
+.pub{display:flex;gap:22px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--rule)}
+.pubs .pub:first-child{border-top:0;padding-top:4px}
+.teaser{flex:0 0 190px;aspect-ratio:16/10;border-radius:9px;overflow:hidden;background:#fff;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;transition:transform .25s ease,box-shadow .25s ease}
+.teaser:hover{transform:translateY(-2px);box-shadow:0 8px 22px -12px rgba(0,0,0,.35)}
+.teaser img{width:100%;height:100%;object-fit:cover}
+.teaser .none{font-size:12px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+.pub-body{flex:1 1 260px;min-width:0}
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:8px;line-height:1}
+.tag{display:inline-flex;align-items:center;height:24px;font-size:13px;font-weight:500;padding:0 10px;border-radius:999px;background:var(--tint);color:var(--tint-ink)}
+.tag.award{background:var(--award);color:#fff;font-weight:600;letter-spacing:.02em}
+.tag.soft{background:var(--bg-2);color:var(--muted)}
+.pub h3{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.3;margin:0 0 5px;letter-spacing:-.005em}
+.pub h3 a{color:var(--ink)}
+.pub .authors{font-size:15px;color:var(--muted);line-height:1.55;margin:0 0 4px}
+.pub .authors span{margin-right:4px}
+.pub .authors .me{color:var(--ink);font-weight:600}
+.pub .venue{font-size:14.5px;color:var(--muted-2);margin:0 0 6px}
+.pub .tldr{font-size:15px;color:var(--ink-2);line-height:1.55;margin:0 0 8px}
+.pub .tldr b{font-weight:600}
+.pub .links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14.5px}
+.pub .links a{font-weight:500}
+.pub .links a::before{content:"→ ";color:var(--faint)}
+@media (max-width:640px){
+  .pub{flex-direction:column;gap:12px}
+  .teaser{flex:0 0 auto;width:100%;max-width:300px}
+}
+
+.sub-h{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin:4px 0 8px}
+.list{list-style:none;margin:0 0 22px;padding:0}
+.list li{display:flex;gap:18px;padding:8px 0;border-top:1px solid var(--rule);font-size:16px}
+.list li:first-child{border-top:0}
+.list .y{flex:0 0 52px;color:var(--muted-2);font-size:14.5px;font-variant-numeric:tabular-nums;padding-top:2px}
+.list .t{color:var(--ink-2)}
+.list .t small{display:block;font-size:14px;color:var(--muted-2);margin-top:1px}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding-bottom:26px}
+.proj{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border:1px solid var(--rule);border-radius:12px;background:var(--bg-2)}
+.proj .ph{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px}
+.proj h3{font-family:var(--serif);font-size:18.5px;font-weight:600;margin:0;line-height:1.3}
+.proj h3 a{color:var(--ink)}
+.proj .k{font-size:12.5px;color:var(--muted-2);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.proj p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+.proj .pl{font-size:14px;font-weight:500;margin-top:2px}
+.proj .pl a::before{content:"→ ";color:var(--faint)}
+.skills{display:flex;flex-direction:column;gap:10px;padding-bottom:26px}
+.skills .sk{display:flex;gap:16px;align-items:baseline;font-size:15.5px}
+.skills .sk .l{flex:0 0 150px;font-size:13.5px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.skills .sk .v{color:var(--ink-2)}
+@media (max-width:600px){.skills .sk{flex-direction:column;gap:2px}}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding-top:28px;margin-top:36px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted-2)}
+footer .fl{display:flex;flex-wrap:wrap;gap:16px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="in">
+    <a class="brand" href="#top">Eunbeen Hong</a>
+    <nav aria-label="Sections">
+      <a href="#publications">Publications</a>
+      <a href="#projects" class="hide-sm">Projects</a>
+      <a href="#education" class="hide-sm">Education</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="assets/Eunbeen_Hong_CV.pdf" target="_blank" rel="noopener" id="cvNav">CV</a>
+    </nav>
+  </div>
+</div>
+<div class="page" id="top">
+
+  <header class="intro">
+    <div class="portrait">
+      <img src="assets/profile.jpg" alt="Eunbeen Hong" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <div class="ph" hidden>photo</div>
+    </div>
+    <div class="intro-text">
+      <h1>Eunbeen Hong</h1>
+      <p class="sub">M.S./Ph.D. student · <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a> · Seoul, Korea</p>
+      <p class="thesis">Understanding and generating dynamic 3D worlds from video: feed-forward 4D novel view synthesis, video diffusion, and what large vision models already know about scenes.</p>
+      <p class="bio">I am an M.S./Ph.D. integrated student at <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a>, advised by <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Prof. Seungryong Kim</a>. I received my B.E. from <a href="https://www.korea.edu/" target="_blank" rel="noopener">Korea University</a>. My recent work builds feed-forward latent models for 4D novel view synthesis and probes the structure hidden inside diffusion transformers and foundation models for segmentation.</p>
+      <div class="cta">
+        <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 14.3L5 13.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5l-7 3.8z"/></svg>Google Scholar</a>
+        <a href="https://github.com/eunbeen-hong" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/eunbeen-hong/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>LinkedIn</a>
+        <a class="ghost" href="mailto:eunbeen.hong@kaist.ac.kr" id="emailLink">eunbeen.hong@kaist.ac.kr</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="d">2026</span><span class="t"><b>TETO</b> is accepted to ECCV 2026.</span></li>
+      <li><span class="d">Sep 2025</span><span class="t"><b>Seg4Diff</b> is accepted to NeurIPS 2025.</span></li>
+      <li><span class="d">Jun 2025</span><span class="t"><b>S<sup>4</sup>M</b> is accepted to ICCV 2025.</span></li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="note">* equal contribution · † corresponding author</p>
+    <div id="pubList"></div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="proj">
+        <div class="ph"><h3><a href="https://github.com/eunbeen-hong/CruzHacks2024-TuitionShock.us" target="_blank" rel="noopener">TuitionShock.us</a></h3><span class="k">CruzHacks 2024</span></div>
+        <p>A heatmap of the cost of community colleges and universities across the United States. Built the MongoDB and Flask backend and made the front end responsive. First place in the Justice Hacks track.</p>
+        <div class="pl"><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">devpost</a> &nbsp; <a href="https://github.com/eunbeen-hong/CruzHacks2024-TuitionShock.us" target="_blank" rel="noopener">code</a></div>
+      </div>
+      <div class="proj">
+        <div class="ph"><h3><a href="https://github.com/eunbeen-hong/3D" target="_blank" rel="noopener">3D: Diffusion Deception Detector</a></h3><span class="k">Computer vision</span></div>
+        <p>Separates diffusion-generated images from real ones by feeding PRNU noise residuals to a ViT to pick up the fingerprints generative models leave behind. Designed the model and ran ablations, reaching over 0.9 accuracy on LSUN Bedroom.</p>
+        <div class="pl"><a href="https://github.com/eunbeen-hong/3D" target="_blank" rel="noopener">code</a></div>
+      </div>
+      <div class="proj">
+        <div class="ph"><h3><a href="https://github.com/eunbeen-hong/LyriKOR" target="_blank" rel="noopener">LyriKOR</a></h3><span class="k">NLP · HCLT 2023</span></div>
+        <p>Translates English lyrics into singable Korean by aligning syllable counts, with a Style Transformer based pipeline. Gathered and cleaned the data. Selected as a top 10 class project and published at the 35th Annual Conference on Human and Cognitive Language Technology.</p>
+        <div class="pl"><a href="https://github.com/eunbeen-hong/LyriKOR" target="_blank" rel="noopener">code</a></div>
+      </div>
+      <div class="proj">
+        <div class="ph"><h3>LCBot</h3><span class="k">With Dell Technologies</span></div>
+        <p>A retrieval-augmented chatbot on an open-source backbone that answers questions grounded in a given set of documents. Built in cooperation with Dell Technologies.</p>
+      </div>
+      <div class="proj">
+        <div class="ph"><h3><a href="https://github.com/eunbeen-hong/2023Madcamp-Week2" target="_blank" rel="noopener">Ola-Ola</a></h3><span class="k">Unity game</span></div>
+        <p>An endless stair-climbing game where players pick their university and compete on a shared ranking. Designed the scenes in Unity. Reached 50+ regular users in its first month.</p>
+        <div class="pl"><a href="https://github.com/eunbeen-hong/2023Madcamp-Week2" target="_blank" rel="noopener">code</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <h2>Honors</h2>
+    <ul class="list">
+      <li><span class="y">2024</span><span class="t">1st Place, Justice Hacks, CruzHacks 2024<small><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">TuitionShock.us</a> · 700+ students from 25 universities · UC Santa Cruz</small></span></li>
+      <li><span class="y">2023</span><span class="t">Outstanding Project, Top 10 of 50 teams, Natural Language Processing<small>LyriKOR, Korea University</small></span></li>
+      <li><span class="y">2021</span><span class="t">Academic Excellence Scholarship<small>Full-ride scholarship covering tuition and fees for all four years, Korea University</small></span></li>
+      <li><span class="y"></span><span class="t">Best Tutor Award<small>Peer Tutoring Program, Korea University</small></span></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="sk"><span class="l">PROGRAMMING</span><span class="v">Python, PyTorch, C/C++, JavaScript (advanced) · C# (intermediate) · Verilog, OCaml, Q# (elementary)</span></div>
+      <div class="sk"><span class="l">LANGUAGES</span><span class="v">Korean (native), English (fluent, TOEIC 985 / 990)</span></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="rows">
+      <div class="row">
+        <div class="logo"><img src="assets/logos/kaist.svg" alt=""></div>
+        <div class="row-body">
+          <div class="row-head"><div><span class="org">KAIST</span><span class="loc">Seoul, Korea</span></div><span class="when">2025 – Present</span></div>
+          <div class="role">M.S./Ph.D. Integrated Course, Kim Jaechul Graduate School of AI</div>
+          <div class="detail">Advisor: <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Seungryong Kim</a></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="logo"><span>UCSC</span></div>
+        <div class="row-body">
+          <div class="row-head"><div><span class="org">University of California, Santa Cruz</span><span class="loc">Santa Cruz, CA</span></div><span class="when">Sep 2023 – Jun 2024</span></div>
+          <div class="role">Exchange Student, Department of Computer Science</div>
+          <div class="detail">Software Design Project · Full Stack Web Development · Deep Learning for Advanced Computer Vision</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="logo"><img src="assets/logos/ku.svg" alt=""></div>
+        <div class="row-body">
+          <div class="row-head"><div><span class="org">Korea University</span><span class="loc">Seoul, Korea</span></div><span class="when">Mar 2021 – Feb 2025</span></div>
+          <div class="role">B.E. in Computer Science and Engineering</div>
+          <div class="detail">GPA 4.36 / 4.5 · Academic Excellence Scholarship (full ride, four years) · Member of <a href="https://aiku.notion.site/" target="_blank" rel="noopener">AIKU</a>, the AI society at Korea University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="rows">
+      <div class="row">
+        <div class="logo"><img src="assets/logos/ku.svg" alt=""></div>
+        <div class="row-body">
+          <div class="row-head"><div><span class="org"><a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB</a></span><span class="loc">Korea University → KAIST</span></div><span class="when">2024 – 2025</span></div>
+          <div class="role">Undergraduate Research Intern</div>
+          <div class="detail">Advisor: <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Seungryong Kim</a><br>Semi-supervised instance segmentation with SAM (S<sup>4</sup>M, ICCV 2025) and open-vocabulary segmentation inside diffusion transformers (Seg4Diff, NeurIPS 2025).</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="logo"><img src="assets/logos/ku.svg" alt=""></div>
+        <div class="row-body">
+          <div class="row-head"><div><span class="org">Korea University</span><span class="loc">Seoul, Korea</span></div></div>
+          <div class="role">Peer Tutor, Computer Architecture and Engineering Mathematics</div>
+          <div class="detail">Best Tutor Award of the semester.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Eunbeen Hong</span>
+    <div class="fl">
+      <a href="https://github.com/eunbeen-hong" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://www.linkedin.com/in/eunbeen-hong/" target="_blank" rel="noopener">LinkedIn</a>
+      <span>Updated Oct 2026</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* Add a paper: append an object to PUBS. Links: page, arxiv (id only), paper (non-arXiv URL), github (owner/repo). */
+var ME='Eunbeen Hong';
+var PUBS=[
+  { year:2026, venue:'Under review', venueFull:'Preprint, under review', thumb:'assets/pubs/fl4n.webp',
+    title:'FL4N: Feed-forward Latent Model for 4D Novel View Synthesis',
+    authors:['Eunbeen Hong','Hyeonseo Yu','Honggyu An','Jooho Son','Hyunah Ko','Soowon Son','Chaehyun Kim','Jahyeok Koo','Jisoo Kim','Junhwa Hur†','Seungryong Kim†'],
+    tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, deformation fields, or geometry supervision.',
+    page:'https://eunbeen-hong.github.io/FL4N/' },
+  { year:2026, venue:'ECCV', venueFull:'European Conference on Computer Vision', thumb:'assets/pubs/teto.webp',
+    title:'TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation',
+    authors:['Jini Yang','Eunbeen Hong','Soowon Son','Hyunkoo Lee','Sunghwan Hong','Sunok Kim','Seungryong Kim'],
+    tldr:'Trains an event-camera motion estimator from a pretrained RGB tracker on a handful of unlabeled real recordings, then uses the predicted motion to guide a video diffusion model for frame interpolation.',
+    page:'https://cvlab-kaist.github.io/TETO/', arxiv:'2603.23487', github:'cvlab-kaist/TETO' },
+  { year:2025, venue:'NeurIPS', venueFull:'Advances in Neural Information Processing Systems', thumb:'assets/pubs/seg4diff.webp',
+    title:'Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers',
+    authors:['Chaehyun Kim','Heeseong Shin','Eunbeen Hong','Heeji Yoon','Anurag Arnab','Paul Hongsuck Seo','Sunghwan Hong†','Seungryong Kim†'],
+    tldr:'Specific attention blocks in text-to-image diffusion transformers already align text to image regions; we expose them for training-free segmentation and strengthen them with lightweight fine-tuning.',
+    page:'https://cvlab-kaist.github.io/Seg4Diff/', arxiv:'2509.18096', github:'cvlab-kaist/Seg4Diff' },
+  { year:2025, venue:'ICCV', venueFull:'IEEE/CVF International Conference on Computer Vision', thumb:'assets/pubs/s4m.webp',
+    title:'S⁴M: Boosting Semi-Supervised Instance Segmentation with SAM',
+    authors:['Heeji Yoon*','Heeseong Shin*','Eunbeen Hong','Hyunwook Choi','Hansang Cho','Daun Chung','Seungryong Kim†'],
+    tldr:'Distills SAM\'s precise localization into the teacher, refines pseudo-labels with SAM, and trains the student with augmentations built on those labels.',
+    page:'https://cvlab-kaist.github.io/S4M/', arxiv:'2504.05301', github:'cvlab-kaist/S4M' }
+];
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function authorsHtml(list){
+  return list.map(function(a,i){
+    var m=a.match(/^(.*?)([*†]*)$/), name=m[1], marks=m[2], last=i===list.length-1;
+    var h=esc(name)+(marks?'<sup>'+marks+'</sup>':'')+(last?'':',');
+    return name===ME ? '<span class="me">'+h+'</span>' : '<span>'+h+'</span>';
+  }).join('');
+}
+function linksHtml(p){
+  var out=[];
+  if(p.page) out.push(['project page',p.page]);
+  if(p.arxiv){ out.push(['arXiv','https://arxiv.org/abs/'+p.arxiv]); out.push(['pdf','https://arxiv.org/pdf/'+p.arxiv]); }
+  if(p.paper) out.push(['paper',p.paper]);
+  if(p.github) out.push(['code','https://github.com/'+p.github]);
+  return out.map(function(l){return '<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
+}
+function render(){
+  var years=[]; PUBS.forEach(function(p){ if(years.indexOf(p.year)<0) years.push(p.year); });
+  years.sort(function(a,b){return b-a;});
+  document.getElementById('pubList').innerHTML=years.map(function(y){
+    return '<div class="year-group"><div class="year">'+y+'</div><div class="pubs">'+
+      PUBS.filter(function(p){return p.year===y;}).map(function(p){
+        var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:'#'));
+        var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
+        var tagCls=/review|preprint|arxiv/i.test(p.venue)?'tag soft':'tag';
+        var venue=/\d{4}/.test(p.venue)||/review/i.test(p.venue)?p.venue:p.venue+' '+p.year;
+        var tags='<span class="'+tagCls+'">'+esc(venue)+'</span>';
+        (p.awards||[]).forEach(function(a){ tags+='<span class="tag award">'+esc(a)+'</span>'; });
+        return '<article class="pub">'+
+          '<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>'+
+          '<div class="pub-body">'+
+            '<div class="tags">'+tags+'</div>'+
+            '<h3><a href="'+esc(primary)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></h3>'+
+            '<p class="authors">'+authorsHtml(p.authors)+'</p>'+
+            '<p class="venue">'+esc(p.venueFull)+(/\d{4}/.test(p.venueFull)?'':', '+p.year)+'</p>'+
+            (p.tldr?'<p class="tldr"><b>TL;DR</b> '+esc(p.tldr)+'</p>':'')+
+            '<div class="links">'+linksHtml(p)+'</div>'+
+          '</div></article>';
+      }).join('')+'</div></div>';
+  }).join('');
+}
+render();
+fetch('assets/Eunbeen_Hong_CV.pdf',{method:'HEAD'}).then(function(r){ if(!r.ok) document.getElementById('cvNav').remove(); }).catch(function(){ document.getElementById('cvNav').remove(); });
+</script>
+</body>
+</html>
