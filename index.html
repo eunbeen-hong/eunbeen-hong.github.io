@@ -223,6 +223,16 @@ footer a{color:var(--muted)}
     <div id="pubList"></div>
   </section>
 
+  <section id="honors">
+    <h2>Honors</h2>
+    <ul class="list">
+      <li><span class="y">2024</span><span class="t">1st Place, Justice Hacks, CruzHacks 2024<small><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">TuitionShock.us</a> · 700+ students from 25 universities · UC Santa Cruz</small></span></li>
+      <li><span class="y">2023</span><span class="t">Outstanding Project, Top 10 of 50 teams, Natural Language Processing<small>LyriKOR, Korea University</small></span></li>
+      <li><span class="y">2021</span><span class="t">Academic Excellence Scholarship<small>Full-ride scholarship covering tuition and fees for all four years, Korea University</small></span></li>
+      <li><span class="y"></span><span class="t">Best Tutor Award<small>Peer Tutoring Program, Korea University</small></span></li>
+    </ul>
+  </section>
+
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
@@ -251,16 +261,6 @@ footer a{color:var(--muted)}
         <div class="pl"><a href="https://github.com/eunbeen-hong/2023Madcamp-Week2" target="_blank" rel="noopener">code</a></div>
       </div>
     </div>
-  </section>
-
-  <section id="honors">
-    <h2>Honors</h2>
-    <ul class="list">
-      <li><span class="y">2024</span><span class="t">1st Place, Justice Hacks, CruzHacks 2024<small><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">TuitionShock.us</a> · 700+ students from 25 universities · UC Santa Cruz</small></span></li>
-      <li><span class="y">2023</span><span class="t">Outstanding Project, Top 10 of 50 teams, Natural Language Processing<small>LyriKOR, Korea University</small></span></li>
-      <li><span class="y">2021</span><span class="t">Academic Excellence Scholarship<small>Full-ride scholarship covering tuition and fees for all four years, Korea University</small></span></li>
-      <li><span class="y"></span><span class="t">Best Tutor Award<small>Peer Tutoring Program, Korea University</small></span></li>
-    </ul>
   </section>
 
   <section id="skills">
@@ -295,7 +295,7 @@ footer a{color:var(--muted)}
         <div class="row-body">
           <div class="row-head"><div><span class="org">Korea University</span><span class="loc">Seoul, Korea</span></div><span class="when">Mar 2021 – Feb 2025</span></div>
           <div class="role">B.E. in Computer Science and Engineering</div>
-          <div class="detail">GPA 4.36 / 4.5 · Academic Excellence Scholarship (full ride, four years) · Member of <a href="https://aiku.notion.site/" target="_blank" rel="noopener">AIKU</a>, the AI society at Korea University</div>
+          <div class="detail">GPA 4.36 / 4.5 · Academic Excellence Scholarship (full ride, four years) · Member of AIKU, the AI society at Korea University</div>
         </div>
       </div>
     </div>
@@ -341,8 +341,7 @@ var PUBS=[
   { year:2026, venue:'Under review', venueFull:'Preprint, under review', thumb:'assets/pubs/fl4n.webp',
     title:'FL4N: Feed-forward Latent Model for 4D Novel View Synthesis',
     authors:['Eunbeen Hong','Hyeonseo Yu','Honggyu An','Jooho Son','Hyunah Ko','Soowon Son','Chaehyun Kim','Jahyeok Koo','Jisoo Kim','Junhwa Hur†','Seungryong Kim†'],
-    tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, deformation fields, or geometry supervision.',
-    page:'https://eunbeen-hong.github.io/FL4N/' },
+    tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, deformation fields, or geometry supervision.' },
   { year:2026, venue:'ECCV', venueFull:'European Conference on Computer Vision', thumb:'assets/pubs/teto.webp',
     title:'TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation',
     authors:['Jini Yang','Eunbeen Hong','Soowon Son','Hyunkoo Lee','Sunghwan Hong','Sunok Kim','Seungryong Kim'],
@@ -382,21 +381,21 @@ function render(){
   document.getElementById('pubList').innerHTML=years.map(function(y){
     return '<div class="year-group"><div class="year">'+y+'</div><div class="pubs">'+
       PUBS.filter(function(p){return p.year===y;}).map(function(p){
-        var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:'#'));
+        var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:''));
         var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
         var tagCls=/review|preprint|arxiv/i.test(p.venue)?'tag soft':'tag';
         var venue=/\d{4}/.test(p.venue)||/review/i.test(p.venue)?p.venue:p.venue+' '+p.year;
         var tags='<span class="'+tagCls+'">'+esc(venue)+'</span>';
         (p.awards||[]).forEach(function(a){ tags+='<span class="tag award">'+esc(a)+'</span>'; });
         return '<article class="pub">'+
-          '<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>'+
+          (primary?'<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>':'<div class="teaser">'+teaser+'</div>')+
           '<div class="pub-body">'+
             '<div class="tags">'+tags+'</div>'+
-            '<h3><a href="'+esc(primary)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></h3>'+
+            '<h3>'+(primary?'<a href="'+esc(primary)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>':esc(p.title))+'</h3>'+
             '<p class="authors">'+authorsHtml(p.authors)+'</p>'+
             '<p class="venue">'+esc(p.venueFull)+(/\d{4}/.test(p.venueFull)?'':', '+p.year)+'</p>'+
             (p.tldr?'<p class="tldr"><b>TL;DR</b> '+esc(p.tldr)+'</p>':'')+
-            '<div class="links">'+linksHtml(p)+'</div>'+
+            (linksHtml(p)?'<div class="links">'+linksHtml(p)+'</div>':'')+
           '</div></article>';
       }).join('')+'</div></div>';
   }).join('');
