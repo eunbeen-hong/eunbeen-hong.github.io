@@ -8,164 +8,135 @@
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="Eunbeen Hong">
 <meta property="og:description" content="M.S./Ph.D. student at CVLAB, KAIST AI. 4D scene understanding and generation, feed-forward novel view synthesis, diffusion models.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='18' font-weight='600' fill='%23fff'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F6E56'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='18' font-weight='600' fill='%23fff'%3EE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
 <style>
 :root{
   --bg:#FFFFFF;
-  --ink:#111111;
-  --ink-2:#333333;
-  --muted:#6B6B6B;
-  --faint:#A3A3A3;
-  --rule:#E8E8E8;
-  --award:#B8441F;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --g1:#0F6E56;
+  --g2:#3F7D6B;
+  --g3:#A9D3C4;
+  --g4:#E3F1EC;
+  --ink:#444444;
+  --muted:#7A7A7A;
+  --font:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#111111;--ink:#EDEDED;--ink-2:#CFCFCF;--muted:#9A9A9A;--faint:#5E5E5E;--rule:#262626;--award:#E8865F;
+    --bg:#121412;--g1:#8FD4BA;--g2:#79B8A1;--g3:#2F5A4B;--g4:#1A2B26;--ink:#D6D2C8;--muted:#9A9A94;
     color-scheme:dark;
   }
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-wrap:pretty}
-a{color:inherit;text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{text-decoration-color:currentColor}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+body{margin:0 auto;max-width:960px;width:92%;padding:0 2.275% 60px;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--g1);text-decoration:none}
+a:hover{color:var(--g2);text-decoration:underline}
+a:focus-visible{outline:2px solid var(--g1);outline-offset:3px}
 img{display:block;max-width:100%}
-[id]{scroll-margin-top:24px}
+hr{border:0;height:1px;background:var(--g3);margin:8px 0 14px}
 sup{font-size:.7em;line-height:0;vertical-align:.4em}
 
-.page{max-width:720px;margin:0 auto;padding:0 clamp(16px,4vw,32px) 64px}
-
-.bar .in{max-width:720px;margin:0 auto;padding:0 clamp(16px,4vw,32px);height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
-.bar nav{display:flex;gap:18px}
-.bar nav a{font-size:15px;color:var(--muted);text-decoration:none}
-.bar nav a:hover{color:var(--ink)}
-@media (max-width:600px){.bar nav{gap:12px}.bar nav a{font-size:14px}.bar nav a.hide-sm{display:none}}
-
-.intro{display:flex;gap:32px;align-items:flex-start;padding:40px 0 32px}
-.portrait{flex:0 0 120px}
-.portrait img,.portrait .ph{width:120px;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
-.portrait .ph{display:grid;place-items:center;border:1px solid var(--rule);font-size:12px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+header{display:flex;gap:36px;align-items:flex-start;padding:64px 0 28px}
+.portrait{flex:0 0 220px}
+.portrait img,.portrait .ph{width:220px;height:220px;border-radius:50%;object-fit:cover}
+.portrait .ph{display:grid;place-items:center;background:var(--g4);color:var(--g2);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
 .portrait img[hidden],.portrait .ph[hidden]{display:none}
-.intro-text{flex:1 1 320px;min-width:0}
-h1{font-weight:600;font-size:28px;line-height:1.2;letter-spacing:-.01em;margin:0 0 6px}
-.sub{font-size:15px;color:var(--muted);margin:0 0 16px}
-.bio{font-size:16px;line-height:1.65;color:var(--ink-2);margin:0 0 10px;max-width:46em}
-.cta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px}
-.cta a{display:inline-flex;align-items:center;gap:6px;font-size:14.5px;color:var(--muted);text-decoration:none}
-.cta a:hover{color:var(--ink)}
-.cta a svg{width:14px;height:14px;fill:currentColor}
+.intro-text{flex:1 1 320px;min-width:0;padding-top:18px}
+h1{color:var(--g1);font-size:30px;font-weight:800;line-height:1.2;margin:0 0 6px}
+.sub{color:var(--g2);font-size:15px;font-weight:700;margin:0 0 4px}
+.bio{color:var(--g2);font-size:15px;line-height:1.8;margin:0}
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:26px}
+.social a{display:inline-flex;align-items:center;justify-content:center;color:var(--g1);transition:opacity .15s}
+.social a:hover{opacity:.5;text-decoration:none}
+.social svg{width:30px;height:30px;fill:currentColor}
+.social .cv{height:30px;padding:0 9px;border:2px solid var(--g1);border-radius:6px;font-weight:800;font-size:14px;letter-spacing:.04em}
 @media (max-width:700px){
-  .intro{gap:20px;padding-top:28px;flex-wrap:wrap}
-  .portrait{flex:0 0 96px}
-  .portrait img,.portrait .ph{width:96px}
+  header{flex-direction:column;align-items:center;text-align:center;gap:20px;padding-top:40px}
+  .portrait{flex:0 0 auto}
+  .portrait img,.portrait .ph{width:180px;height:180px}
+  .intro-text{padding-top:0}
+  .social{justify-content:center}
 }
 
-section{padding:28px 0 8px}
-h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 18px}
-.note{font-size:14px;color:var(--faint);margin:-8px 0 16px}
+section{padding:26px 0 6px}
+h2{color:var(--g1);font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:.02em;margin:0}
+h2+hr,h2+.note{margin-top:8px}
+.note{color:var(--muted);font-size:14px;margin:0 0 6px}
 
-.news{list-style:none;margin:0;padding:0 0 16px;display:flex;flex-direction:column;gap:8px}
-.news li{display:flex;gap:18px;align-items:baseline;font-size:15.5px}
-.news .d{flex:0 0 76px;font-size:14px;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
-.news .t{color:var(--ink-2)}
-.news .t b{font-weight:600;color:var(--ink)}
+.pubs{display:flex;flex-direction:column}
+.pub{display:flex;gap:3%;align-items:flex-start;padding:22px 0}
+.teaser{flex:0 0 37%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.teaser img{width:100%;height:auto}
+.teaser .none{width:100%;aspect-ratio:16/9;display:grid;place-items:center;background:var(--g4);color:var(--g2);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.pub-body{flex:1 1 0;min-width:0}
+.pub h3{color:var(--g1);font-size:18px;font-weight:800;line-height:1.35;margin:0}
+.pub h3 a{color:inherit}
+.pub .authors{font-size:15px;color:var(--ink);line-height:1.55;margin:0}
+.pub .authors span{margin-right:4px}
+.pub .authors .me{font-weight:800}
+.pub .venue{font-size:15px;color:var(--ink);font-style:italic;margin:0}
+.pub .venue b{color:var(--award,#B8441F);font-style:normal;margin-left:8px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:110px;height:27px;background:var(--g3);color:#fff;font-size:14px;font-weight:800;cursor:pointer}
+a.btn:hover{background:var(--g1);color:#fff;text-decoration:none}
+.btn.tldr:hover{background:var(--g1)}
+.btn .pop{display:none;position:absolute;left:0;top:100%;z-index:2;width:min(520px,80vw);background:#fff;color:var(--ink);font-weight:400;font-size:14px;line-height:1.55;text-align:left;padding:12px 16px;box-shadow:0 8px 16px rgba(0,0,0,.2);cursor:default}
+.btn.tldr:hover .pop{display:block}
+@media (max-width:640px){
+  .pub{flex-direction:column;gap:12px}
+  .teaser{flex:0 0 auto;width:100%}
+}
 
-.rows{display:flex;flex-direction:column;gap:20px;padding-bottom:20px}
-.row{display:flex;gap:14px;align-items:flex-start}
-.logo{flex:0 0 36px;width:36px;height:36px;display:grid;place-items:center;overflow:hidden;margin-top:2px}
-.logo img{width:100%;height:100%;object-fit:contain;filter:grayscale(1);opacity:.8}
-.logo span{font-size:15px;font-weight:600;color:var(--muted)}
+.news{list-style:none;margin:0;padding:4px 0 8px;display:flex;flex-direction:column;gap:6px}
+.news li{display:flex;gap:18px;align-items:baseline;font-size:15px}
+.news .d{flex:0 0 80px;color:var(--muted);font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.news .t b{font-weight:800;color:var(--g1)}
+
+.rows{display:flex;flex-direction:column;gap:18px;padding:6px 0 8px}
+.row{display:flex;gap:16px;align-items:flex-start}
+.logo{flex:0 0 48px;height:48px;display:flex;align-items:center;justify-content:center}
+.logo img{max-width:48px;max-height:48px;width:auto;height:auto;object-fit:contain}
 .row-body{flex:1 1 auto;min-width:0}
 .row-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px}
-.org{font-size:16px;font-weight:600;color:var(--ink)}
-.org a{text-decoration:none}
-.org a:hover{text-decoration:underline}
-.loc{font-size:14px;color:var(--faint);margin-left:8px;font-weight:400}
-.when{font-size:14px;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
-.role{font-size:15.5px;color:var(--ink-2);margin-top:1px}
+.org{color:var(--g1);font-size:17px;font-weight:800}
+.org a{color:inherit}
+.loc{color:var(--muted);font-size:14px;margin-left:8px;font-weight:400}
+.when{color:var(--muted);font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.role{font-size:15px;color:var(--ink);margin-top:1px}
 .detail{font-size:14.5px;color:var(--muted);margin-top:2px;line-height:1.55}
 
-.year-group{padding:0 0 8px}
-.year{font-size:14px;font-weight:500;color:var(--faint);margin:0 0 10px;font-variant-numeric:tabular-nums}
-.year-group+.year-group{padding-top:12px}
-.pubs{display:flex;flex-direction:column;gap:24px;padding-bottom:4px}
-.pub{display:flex;gap:20px;align-items:flex-start}
-.teaser{flex:0 0 150px;aspect-ratio:16/10;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-decoration:none}
-.teaser img{width:100%;height:100%;object-fit:cover}
-.teaser .none{font-size:12px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
-.pub-body{flex:1 1 240px;min-width:0}
-.tags{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-bottom:6px;font-size:13.5px}
-.tag{color:var(--muted)}
-.tag.award{color:var(--award);font-weight:500}
-.tag.soft{color:var(--faint)}
-.tag.lnk{color:var(--muted)}
-.tag.lnk:hover{color:var(--ink)}
-.pub h3{font-weight:600;font-size:16.5px;line-height:1.35;margin:0 0 4px}
-.pub h3 a{text-decoration:none}
-.pub h3 a:hover{text-decoration:underline}
-.pub .authors{font-size:14.5px;color:var(--muted);line-height:1.55;margin:0 0 2px}
-.pub .authors span{margin-right:4px}
-.pub .authors .me{color:var(--ink);font-weight:500}
-.pub .venue{font-size:14px;color:var(--faint);margin:0 0 6px}
-.pub .tldr{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin:0}
-.pub .tldr b{font-weight:600}
-@media (max-width:640px){
-  .pub{flex-direction:column;gap:10px}
-  .teaser{flex:0 0 auto;width:100%;max-width:260px}
-}
+.list{list-style:none;margin:0;padding:4px 0 8px;display:flex;flex-direction:column;gap:8px}
+.list li{display:flex;gap:18px;font-size:15px}
+.list .y{flex:0 0 52px;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums;padding-top:1px}
+.list .t{color:var(--ink)}
+.list .t small{display:block;font-size:14px;color:var(--muted)}
 
-.sub-h{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin:4px 0 8px}
-.list{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:8px}
-.list li{display:flex;gap:18px;font-size:15.5px}
-.list .y{flex:0 0 52px;color:var(--faint);font-size:14px;font-variant-numeric:tabular-nums;padding-top:2px}
-.list .t{color:var(--ink-2)}
-.list .t small{display:block;font-size:14px;color:var(--muted);margin-top:1px}
-
-.projects{display:flex;flex-direction:column;gap:18px;padding-bottom:20px}
-.proj{display:flex;flex-direction:column;gap:3px}
+.projects{display:flex;flex-direction:column;gap:16px;padding:6px 0 8px}
+.proj{display:flex;flex-direction:column;gap:2px}
 .proj .ph{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px}
-.proj h3{font-size:16px;font-weight:600;margin:0;line-height:1.3}
-.proj h3 a{text-decoration:none}
-.proj h3 a:hover{text-decoration:underline}
-.proj .k{font-size:13px;color:var(--faint);white-space:nowrap}
-.proj p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
-.proj .pl{font-size:14px;color:var(--muted)}
-.skills{display:flex;flex-direction:column;gap:8px;padding-bottom:20px}
+.proj h3{color:var(--g1);font-size:16.5px;font-weight:800;margin:0;line-height:1.3}
+.proj h3 a{color:inherit}
+.proj .k{font-size:13.5px;color:var(--muted);white-space:nowrap}
+.proj p{margin:0;font-size:14.5px;color:var(--ink);line-height:1.6}
+.proj .pl{font-size:14px;font-weight:700}
+.skills{display:flex;flex-direction:column;gap:8px;padding:6px 0 8px}
 .skills .sk{display:flex;gap:16px;align-items:baseline;font-size:15px}
-.skills .sk .l{flex:0 0 120px;font-size:13px;color:var(--faint);letter-spacing:.04em}
-.skills .sk .v{color:var(--ink-2)}
+.skills .sk .l{flex:0 0 120px;color:var(--g2);font-size:13px;font-weight:800;letter-spacing:.06em}
+.skills .sk .v{color:var(--ink)}
 @media (max-width:600px){.skills .sk{flex-direction:column;gap:2px}.skills .sk .l{flex:0 0 auto}}
-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding-top:40px;margin-top:24px;font-size:13.5px;color:var(--faint)}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;padding-top:40px;margin-top:24px;font-size:14px;color:var(--muted)}
 footer .fl{display:flex;flex-wrap:wrap;gap:16px}
-footer a{color:var(--muted);text-decoration:none}
-footer a:hover{color:var(--ink)}
+footer a{color:var(--g2);font-weight:700}
 </style>
 </head>
 <body>
-<div class="bar">
-  <div class="in">
-    <a class="brand" href="#top">Eunbeen Hong</a>
-    <nav aria-label="Sections">
-      <a href="#publications">Publications</a>
-      <a href="#projects" class="hide-sm">Projects</a>
-      <a href="#education" class="hide-sm">Education</a>
-      <a href="#experience" class="hide-sm">Experience</a>
-      <a href="assets/Eunbeen_Hong_CV.pdf" target="_blank" rel="noopener" id="cvNav">CV</a>
-    </nav>
-  </div>
-</div>
 <div class="page" id="top">
 
-  <header class="intro">
+  <header>
     <div class="portrait">
       <img src="assets/profile.jpg" alt="Eunbeen Hong" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
       <div class="ph" hidden>photo</div>
@@ -173,20 +144,23 @@ footer a:hover{color:var(--ink)}
     <div class="intro-text">
       <h1>Eunbeen Hong</h1>
       <p class="sub">M.S./Ph.D. student · <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a> · Seoul, Korea</p>
+      <hr>
       <p class="bio">I am an M.S./Ph.D. integrated student at <a href="https://cvlab.kaist.ac.kr/" target="_blank" rel="noopener">CVLAB, KAIST AI</a>, advised by <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank" rel="noopener">Prof. Seungryong Kim</a>. My recent work builds feed-forward latent models for 4D novel view synthesis and probes the structure hidden inside diffusion transformers.</p>
-      <div class="cta">
-        <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 14.3L5 13.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5l-7 3.8z"/></svg>Scholar</a>
-        <a href="https://github.com/eunbeen-hong" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a>
-        <a href="https://www.linkedin.com/in/eunbeen-hong/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>LinkedIn</a>
-        <a href="mailto:eunbeen.hong@kaist.ac.kr" id="emailLink">eunbeen.hong@kaist.ac.kr</a>
+      <div class="social">
+        <a class="cv" href="assets/Eunbeen_Hong_CV.pdf" target="_blank" rel="noopener" id="cvNav" title="CV">CV</a>
+        <a href="mailto:eunbeen.hong@kaist.ac.kr" title="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.6V17h16V7.6l-8 5.4-8-5.4zM4.9 7l7.1 4.8L19.1 7H4.9z"/></svg></a>
+        <a href="https://github.com/eunbeen-hong" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=gEWFjpAAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 14.3L5 13.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5l-7 3.8z"/></svg></a>
+        <a href="https://www.linkedin.com/in/eunbeen-hong/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg></a>
       </div>
     </div>
   </header>
 
   <section id="news">
     <h2>News</h2>
+    <hr>
     <ul class="news">
-      <li><span class="d">2026</span><span class="t"><b>TETO</b> is accepted to ECCV 2026.</span></li>
+      <li><span class="d">Jun 2026</span><span class="t"><b>TETO</b> is accepted to ECCV 2026.</span></li>
       <li><span class="d">Sep 2025</span><span class="t"><b>Seg4Diff</b> is accepted to NeurIPS 2025.</span></li>
       <li><span class="d">Jun 2025</span><span class="t"><b>S<sup>4</sup>M</b> is accepted to ICCV 2025.</span></li>
     </ul>
@@ -194,12 +168,14 @@ footer a:hover{color:var(--ink)}
 
   <section id="publications">
     <h2>Publications</h2>
+    <hr>
     <p class="note">* equal contribution · † corresponding author</p>
     <div id="pubList"></div>
   </section>
 
   <section id="honors">
     <h2>Honors</h2>
+    <hr>
     <ul class="list">
       <li><span class="y">2024</span><span class="t">1st Place, Justice Hacks, CruzHacks 2024<small><a href="https://devpost.com/software/tuition-shock" target="_blank" rel="noopener">TuitionShock.us</a> · 700+ students from 25 universities · UC Santa Cruz</small></span></li>
       <li><span class="y">2023</span><span class="t">Outstanding Project, Top 10 of 50 teams, Natural Language Processing<small>LyriKOR, Korea University</small></span></li>
@@ -210,6 +186,7 @@ footer a:hover{color:var(--ink)}
 
   <section id="projects">
     <h2>Projects</h2>
+    <hr>
     <div class="projects">
       <div class="proj">
         <div class="ph"><h3><a href="https://github.com/eunbeen-hong/CruzHacks2024-TuitionShock.us" target="_blank" rel="noopener">TuitionShock.us</a></h3><span class="k">CruzHacks 2024</span></div>
@@ -240,6 +217,7 @@ footer a:hover{color:var(--ink)}
 
   <section id="skills">
     <h2>Skills</h2>
+    <hr>
     <div class="skills">
       <div class="sk"><span class="l">LANGUAGES</span><span class="v">Korean (native), English (fluent, TOEIC 985 / 990)</span></div>
     </div>
@@ -247,6 +225,7 @@ footer a:hover{color:var(--ink)}
 
   <section id="education">
     <h2>Education</h2>
+    <hr>
     <div class="rows">
       <div class="row">
         <div class="logo"><img src="assets/logos/kaist.svg" alt=""></div>
@@ -277,6 +256,7 @@ footer a:hover{color:var(--ink)}
 
   <section id="experience">
     <h2>Experience</h2>
+    <hr>
     <div class="rows">
       <div class="row">
         <div class="logo"><img src="assets/logos/cvlab.png" alt=""></div>
@@ -343,36 +323,32 @@ function authorsHtml(list){
 }
 function linksHtml(p){
   var out=[];
-  if(p.page) out.push(['project page',p.page]);
-  if(p.arxiv) out.push(['arXiv','https://arxiv.org/abs/'+p.arxiv]);
-  if(p.paper) out.push(['paper',p.paper]);
-  if(p.github) out.push(['code','https://github.com/'+p.github]);
-  return out.map(function(l){return '<a class="tag lnk" href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
+  if(p.page) out.push(['Project Page',p.page]);
+  if(p.tldr) out.push(['TL;DR',null]);
+  if(p.arxiv) out.push(['Paper','https://arxiv.org/abs/'+p.arxiv]);
+  if(p.paper) out.push(['Paper',p.paper]);
+  if(p.github) out.push(['Code','https://github.com/'+p.github]);
+  return out.map(function(l){
+    if(!l[1]) return '<span class="btn tldr" tabindex="0">TL;DR<span class="pop">'+esc(p.tldr)+'</span></span>';
+    return '<a class="btn" href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';
+  }).join('');
 }
 function render(){
-  var years=[]; PUBS.forEach(function(p){ if(years.indexOf(p.year)<0) years.push(p.year); });
-  years.sort(function(a,b){return b-a;});
-  document.getElementById('pubList').innerHTML=years.map(function(y){
-    return '<div class="year-group"><div class="year">'+y+'</div><div class="pubs">'+
-      PUBS.filter(function(p){return p.year===y;}).map(function(p){
-        var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:''));
-        var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
-        var tagCls=/review|preprint|arxiv/i.test(p.venue)?'tag soft':'tag';
-        var venue=/\d{4}/.test(p.venue)?p.venue:p.venue+' '+p.year;
-        var tags='<span class="'+tagCls+'">'+esc(venue)+'</span>';
-        (p.awards||[]).forEach(function(a){ tags+='<span class="tag award">'+esc(a)+'</span>'; });
-        tags+=linksHtml(p);
-        return '<article class="pub">'+
-          (primary?'<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>':'<div class="teaser">'+teaser+'</div>')+
-          '<div class="pub-body">'+
-            '<div class="tags">'+tags+'</div>'+
-            '<h3>'+(primary?'<a href="'+esc(primary)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>':esc(p.title))+'</h3>'+
-            '<p class="authors">'+authorsHtml(p.authors)+'</p>'+
-            '<p class="venue">'+esc(p.venueFull)+(/\d{4}/.test(p.venueFull)?'':', '+p.year)+'</p>'+
-            (p.tldr?'<p class="tldr"><b>TL;DR</b> '+esc(p.tldr)+'</p>':'')+
-          '</div></article>';
-      }).join('')+'</div></div>';
-  }).join('');
+  var sorted=PUBS.slice().sort(function(a,b){return b.year-a.year;});
+  document.getElementById('pubList').innerHTML='<div class="pubs">'+sorted.map(function(p){
+    var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:''));
+    var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
+    var venue=esc(p.venueFull||p.venue)+(/\d{4}/.test(p.venueFull||p.venue)?'':', '+p.year);
+    (p.awards||[]).forEach(function(a){ venue+='<b>'+esc(a)+'</b>'; });
+    return '<article class="pub">'+
+      (primary?'<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>':'<div class="teaser">'+teaser+'</div>')+
+      '<div class="pub-body">'+
+        '<h3>'+(primary?'<a href="'+esc(primary)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>':esc(p.title))+'</h3>'+
+        '<p class="authors">'+authorsHtml(p.authors)+'</p>'+
+        '<p class="venue">'+venue+'</p>'+
+        '<div class="btns">'+linksHtml(p)+'</div>'+
+      '</div></article>';
+  }).join('')+'</div>';
 }
 render();
 fetch('assets/Eunbeen_Hong_CV.pdf',{method:'HEAD'}).then(function(r){ if(!r.ok) document.getElementById('cvNav').remove(); }).catch(function(){ document.getElementById('cvNav').remove(); });
