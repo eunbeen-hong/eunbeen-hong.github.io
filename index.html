@@ -124,8 +124,10 @@ a.btn:hover{background:var(--g1);color:#fff;text-decoration:none}
 .proj p{margin:0;font-size:16px;color:var(--ink);line-height:1.6}
 .proj .pl{font-size:15px;font-weight:700}
 .fold:not(.open)>:nth-child(n+4){display:none}
-.more{background:none;border:0;padding:4px 0;margin:2px 0 6px;font:inherit;font-size:14px;font-weight:600;color:var(--g1);cursor:pointer}
-.more:hover{text-decoration:underline}
+.more{display:flex;align-items:center;gap:8px;margin:8px auto 4px;padding:6px 16px;background:none;border:0;font:inherit;font-size:14.5px;font-weight:600;color:var(--g1);cursor:pointer}
+.more::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.more[aria-expanded="true"]::after{transform:translateY(2px) rotate(-135deg)}
+.more:hover{color:var(--g2)}
 .skills{display:flex;flex-direction:column;gap:8px;padding:6px 0 8px}
 .skills .sk{display:flex;gap:16px;align-items:baseline;font-size:15px}
 .skills .sk .l{flex:0 0 120px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.06em}
@@ -369,7 +371,7 @@ render();
 document.querySelectorAll('.fold').forEach(function(el){
   var n=el.children.length; if(n<=3) return;
   var b=document.createElement('button'); b.type='button'; b.className='more';
-  var set=function(){ b.textContent=el.classList.contains('open')?'Show less':'Show all ('+n+')'; b.setAttribute('aria-expanded',el.classList.contains('open')); };
+  var set=function(){ b.textContent=el.classList.contains('open')?'Show less':'Show more ('+(n-3)+')'; b.setAttribute('aria-expanded',el.classList.contains('open')); };
   b.addEventListener('click',function(){ el.classList.toggle('open'); set(); }); set(); el.after(b);
 });
 document.getElementById('themeBtn').addEventListener('click',function(){
