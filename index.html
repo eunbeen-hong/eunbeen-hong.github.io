@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B4A3E'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='18' font-weight='600' fill='%23fff'%3EE%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
 :root{
   --bg:#FFFFFF;
@@ -20,7 +20,7 @@
   --g3:#B5CBC1;
   --g4:#E8EFEB;
   --ink:#222622;
-  --muted:#686D6A;
+  --muted:#545956;
   --font:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   color-scheme:light;
 }
@@ -33,7 +33,7 @@
 :root[data-theme="dark"]{--bg:#141816;--g1:#A6C7B1;--g2:#8DAA97;--g3:#3B5446;--g4:#1D2622;--ink:#E3E6E4;--muted:#9EA4A0;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0 auto;max-width:960px;width:92%;padding:0 2.275% 60px;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{margin:0 auto;max-width:960px;width:92%;padding:0 2.275% 60px;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.7}
 a{color:var(--g1);text-decoration:none}
 a:hover{color:var(--g2);text-decoration:underline}
 a:focus-visible{outline:2px solid var(--g1);outline-offset:3px}
@@ -49,7 +49,7 @@ header{display:flex;gap:36px;align-items:flex-start;padding:64px 0 28px}
 .intro-text{flex:1 1 320px;min-width:0;padding-top:18px}
 h1{color:var(--g1);font-size:30px;font-weight:700;line-height:1.2;margin:0 0 6px}
 .sub{color:var(--ink);font-size:15px;font-weight:700;margin:0 0 4px}
-.bio{color:var(--ink);font-size:15px;line-height:1.8;margin:0}
+.bio{color:var(--ink);font-size:16px;line-height:1.8;margin:0}
 .social{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px}
 .social a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--g1)}
 .social a:hover{text-decoration:underline}
@@ -110,19 +110,19 @@ a.btn:hover{background:var(--g1);color:#fff;text-decoration:none}
 .detail{font-size:14.5px;color:var(--muted);margin-top:2px;line-height:1.55}
 
 .list{list-style:none;margin:0;padding:4px 0 8px;display:flex;flex-direction:column;gap:8px}
-.list li{display:flex;gap:18px;font-size:15.5px}
-.list .y{flex:0 0 52px;color:var(--muted);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;padding-top:1px}
+.list li{display:flex;gap:18px;font-size:16px}
+.list .y{flex:0 0 52px;color:var(--muted);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;padding-top:1px}
 .list .t{color:var(--ink);font-weight:600}
-.list .t small{display:block;font-size:14px;font-weight:400;color:var(--ink)}
+.list .t small{display:block;font-size:15px;font-weight:500;color:var(--ink)}
 
 .projects{display:flex;flex-direction:column;gap:22px;padding:10px 0 8px}
 .proj{display:flex;flex-direction:column;gap:3px;border-left:3px solid var(--g3);padding:2px 0 2px 16px}
 .proj .ph{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px}
-.proj h3{color:var(--g1);font-size:16.5px;font-weight:700;margin:0;line-height:1.3}
+.proj h3{color:var(--g1);font-size:17.5px;font-weight:700;margin:0;line-height:1.3}
 .proj h3 a{color:inherit}
-.proj .k{font-size:13.5px;color:var(--muted);font-weight:600;white-space:nowrap}
-.proj p{margin:0;font-size:15px;color:var(--ink);line-height:1.6}
-.proj .pl{font-size:14px;font-weight:700}
+.proj .k{font-size:14.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+.proj p{margin:0;font-size:16px;font-weight:500;color:var(--ink);line-height:1.6}
+.proj .pl{font-size:15px;font-weight:700}
 .skills{display:flex;flex-direction:column;gap:8px;padding:6px 0 8px}
 .skills .sk{display:flex;gap:16px;align-items:baseline;font-size:15px}
 .skills .sk .l{flex:0 0 120px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.06em}
