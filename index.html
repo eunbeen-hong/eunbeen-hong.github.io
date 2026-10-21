@@ -123,6 +123,9 @@ a.btn:hover{background:var(--g1);color:#fff;text-decoration:none}
 .proj .k{font-size:14.5px;color:var(--muted);font-weight:600;white-space:nowrap}
 .proj p{margin:0;font-size:16px;color:var(--ink);line-height:1.6}
 .proj .pl{font-size:15px;font-weight:700}
+.fold:not(.open)>:nth-child(n+4){display:none}
+.more{background:none;border:0;padding:4px 0;margin:2px 0 6px;font:inherit;font-size:14px;font-weight:600;color:var(--g1);cursor:pointer}
+.more:hover{text-decoration:underline}
 .skills{display:flex;flex-direction:column;gap:8px;padding:6px 0 8px}
 .skills .sk{display:flex;gap:16px;align-items:baseline;font-size:15px}
 .skills .sk .l{flex:0 0 120px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.06em}
@@ -171,7 +174,7 @@ footer a{color:var(--g2);font-weight:700}
   <section id="news">
     <h2>News</h2>
     <hr>
-    <ul class="news">
+    <ul class="fold news">
       <li><span class="d">Jun 2026</span><span class="t"><b>TETO</b> is accepted to ECCV 2026.</span></li>
       <li><span class="d">Sep 2025</span><span class="t"><b>Seg4Diff</b> is accepted to NeurIPS 2025.</span></li>
       <li><span class="d">Jun 2025</span><span class="t"><b>S<sup>4</sup>M</b> is accepted to ICCV 2025.</span></li>
@@ -199,7 +202,7 @@ footer a{color:var(--g2);font-weight:700}
   <section id="projects">
     <h2>Projects</h2>
     <hr>
-    <div class="projects">
+    <div class="fold projects">
       <div class="proj">
         <div class="ph"><h3>LCBot</h3><span class="k">With Dell Technologies</span></div>
         <p>A retrieval-augmented chatbot on an open-source backbone that answers questions grounded in a given set of documents. Built in cooperation with Dell Technologies.</p>
@@ -363,6 +366,12 @@ function render(){
   }).join('')+'</div>';
 }
 render();
+document.querySelectorAll('.fold').forEach(function(el){
+  var n=el.children.length; if(n<=3) return;
+  var b=document.createElement('button'); b.type='button'; b.className='more';
+  var set=function(){ b.textContent=el.classList.contains('open')?'Show less':'Show all ('+n+')'; b.setAttribute('aria-expanded',el.classList.contains('open')); };
+  b.addEventListener('click',function(){ el.classList.toggle('open'); set(); }); set(); el.after(b);
+});
 document.getElementById('themeBtn').addEventListener('click',function(){
   var r=document.documentElement,cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'),next=cur==='dark'?'light':'dark';
   r.setAttribute('data-theme',next);
