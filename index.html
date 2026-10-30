@@ -310,22 +310,22 @@ footer a{color:var(--g2);font-weight:700}
 /* Add a paper: append an object to PUBS. Links: page, arxiv (id only), paper (non-arXiv URL), github (owner/repo). */
 var ME='Eunbeen Hong';
 var PUBS=[
-  { year:2026, venue:'Preprint', venueFull:'Preprint', thumb:'assets/pubs/fl4n_arch.webp',
+  { year:2026, venue:'Preprint', venueFull:'Preprint', thumb:'assets/pubs/fl4n.gif',
     title:'FL4N: Feed-forward Latent Model for 4D Novel View Synthesis',
     authors:['Eunbeen Hong','Hyeonseo Yu','Honggyu An','Jooho Son','Hyunah Ko','Soowon Son','Chaehyun Kim','Jahyeok Koo','Jisoo Kim','Junhwa Hur†','Seungryong Kim†'],
     tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, inductive bias or geometry supervision.',
     page:'https://cvlab-kaist.github.io/FL4N/', arxiv:'2610.35854', github:'cvlab-kaist/FL4N' },
-  { year:2026, venue:'ECCV', venueFull:'European Conference on Computer Vision', thumb:'assets/pubs/teto.webp',
+  { year:2026, venue:'ECCV', venueFull:'European Conference on Computer Vision', thumb:'assets/pubs/teto.gif',
     title:'TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation',
     authors:['Jini Yang*','Eunbeen Hong*','Soowon Son','Hyunkoo Lee','Sunghwan Hong','Sunok Kim','Seungryong Kim'],
     tldr:'Trains an event-camera motion estimator from a pretrained RGB tracker on a handful of unlabeled real recordings, then uses the predicted motion to guide a video diffusion model for frame interpolation.',
     page:'https://cvlab-kaist.github.io/TETO/', arxiv:'2603.23487', github:'cvlab-kaist/TETO' },
-  { year:2025, venue:'NeurIPS', venueFull:'Advances in Neural Information Processing Systems', thumb:'assets/pubs/seg4diff.webp',
+  { year:2025, venue:'NeurIPS', venueFull:'Advances in Neural Information Processing Systems', thumb:'assets/pubs/seg4diff.gif',
     title:'Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers',
     authors:['Chaehyun Kim','Heeseong Shin','Eunbeen Hong','Heeji Yoon','Anurag Arnab','Paul Hongsuck Seo','Sunghwan Hong†','Seungryong Kim†'],
     tldr:'Specific attention blocks in text-to-image diffusion transformers already align text to image regions; we expose them for training-free segmentation and strengthen them with lightweight fine-tuning.',
     page:'https://cvlab-kaist.github.io/Seg4Diff/', arxiv:'2509.18096', github:'cvlab-kaist/Seg4Diff' },
-  { year:2025, venue:'ICCV', venueFull:'IEEE/CVF International Conference on Computer Vision', thumb:'assets/pubs/s4m.webp',
+  { year:2025, venue:'ICCV', venueFull:'IEEE/CVF International Conference on Computer Vision', thumb:'assets/pubs/s4m.gif',
     title:'S⁴M: Boosting Semi-Supervised Instance Segmentation with SAM',
     authors:['Heeji Yoon*','Heeseong Shin*','Eunbeen Hong','Hyunwook Choi','Hansang Cho','Daun Chung','Seungryong Kim†'],
     tldr:'Distills SAM\'s precise localization into the teacher, refines pseudo-labels with SAM, and trains the student with augmentations built on those labels.',
@@ -357,7 +357,7 @@ function render(){
   document.getElementById('pubList').innerHTML='<div class="pubs">'+sorted.map(function(p){
     var primary=p.page||(p.arxiv?'https://arxiv.org/abs/'+p.arxiv:p.paper||(p.github?'https://github.com/'+p.github:''));
     var teaser=p.thumb?'<img src="'+esc(p.thumb)+'" alt="" loading="lazy">':'<span class="none">'+esc(p.venue)+'</span>';
-    var venue=esc(p.venueFull||p.venue)+(/\d{4}/.test(p.venueFull||p.venue)?'':', '+p.year);
+    var venue=esc(p.venueFull||p.venue)+(p.venueFull&&p.venueFull!==p.venue?' ('+esc(p.venue)+')':'')+(/\d{4}/.test(p.venueFull||p.venue)?'':', '+p.year);
     (p.awards||[]).forEach(function(a){ venue+='<b>'+esc(a)+'</b>'; });
     return '<article class="pub">'+
       (primary?'<a class="teaser" href="'+esc(primary)+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+teaser+'</a>':'<div class="teaser">'+teaser+'</div>')+
