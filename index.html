@@ -177,6 +177,7 @@ footer a{color:var(--g2);font-weight:700}
     <h2>News</h2>
     <hr>
     <ul class="fold news">
+      <li><span class="d">Oct 2026</span><span class="t"><b>FL4N</b> is released on arXiv.</span></li>
       <li><span class="d">Jun 2026</span><span class="t"><b>TETO</b> is accepted to ECCV 2026.</span></li>
       <li><span class="d">Sep 2025</span><span class="t"><b>Seg4Diff</b> is accepted to NeurIPS 2025.</span></li>
       <li><span class="d">Jun 2025</span><span class="t"><b>S<sup>4</sup>M</b> is accepted to ICCV 2025.</span></li>
@@ -312,7 +313,8 @@ var PUBS=[
   { year:2026, venue:'Preprint', venueFull:'Preprint', thumb:'assets/pubs/fl4n_arch.webp',
     title:'FL4N: Feed-forward Latent Model for 4D Novel View Synthesis',
     authors:['Eunbeen Hong','Hyeonseo Yu','Honggyu An','Jooho Son','Hyunah Ko','Soowon Son','Chaehyun Kim','Jahyeok Koo','Jisoo Kim','Junhwa Hur†','Seungryong Kim†'],
-    tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, inductive bias or geometry supervision.' },
+    tldr:'A monocular video goes in and any viewpoint at any timestamp comes out in a single feed-forward pass, with no 3D Gaussians, inductive bias or geometry supervision.',
+    page:'https://cvlab-kaist.github.io/FL4N/', arxiv:'2610.35854', github:'cvlab-kaist/FL4N' },
   { year:2026, venue:'ECCV', venueFull:'European Conference on Computer Vision', thumb:'assets/pubs/teto.webp',
     title:'TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation',
     authors:['Jini Yang*','Eunbeen Hong*','Soowon Son','Hyunkoo Lee','Sunghwan Hong','Sunok Kim','Seungryong Kim'],
@@ -340,8 +342,8 @@ function authorsHtml(list){
 }
 function linksHtml(p){
   var out=[];
-  if(p.page) out.push(['Project Page',p.page]);
   if(p.tldr) out.push(['TL;DR',null]);
+  if(p.page) out.push(['Project Page',p.page]);
   if(p.arxiv) out.push(['Paper','https://arxiv.org/abs/'+p.arxiv]);
   if(p.paper) out.push(['Paper',p.paper]);
   if(p.github) out.push(['Code','https://github.com/'+p.github]);
